@@ -1,0 +1,240 @@
+<em>On the subject of mathematical modeling for malaria...<br>
+  "At present medical ideas regarding these factors are generally so nebulous that almost any statements about them pass muster, and often retard or misdirect important preventive measures for years." -- Sir Ronald Ross, 1911</em>
+<br style='clear:both'><br><br>
+
+<p>One form of epidemiological model is the 'SIR' model, which is a mathematical representation of the process by which certain types of infectious diseases are transmitted within a community.</p>
+
+<p>The <strong>S</strong> in the SIR model refers to <strong>'Susceptible'</strong> proportion of the community.
+  That is, people who have not been infected by the virus, but are susceptible to becoming infected
+  because they have no immunity to the virus.</p>
+
+<p>The <strong>I</strong> in the SIR model refers to <strong>'Infected'</strong> proportion of the community. More precisely,
+  it refers to the 'infectious' proportion -- those that have been infected, and are able to infect others.
+  People in this group do not remain infectious forever, but can either recover and be immune to further infection,
+  or unfortunately die.</p>
+
+<p>The <strong>R</strong> in the SIR model refers to <strong>'Recovered'</strong> proportion of the community. These can be either
+  people who recover, or those that pass away from their infection.  Either way, they are no longer infectious.</p>
+
+<p>How portions of the community transition from S to I, then to R depend on a couple of key parameters, namely
+  the <strong>effective contact rate (b)</strong> -- one out of how many susceptibles who contact an infected person on a day would become newly infected? Another parameter is the <strong>Infectious Period (1/k)</strong> -- the typical duration that someone is infectious.</p>
+
+ <p>Here's what the mathematics look like:</p>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=http://visualmatheditor.equatheque.net/js/mathjax-MathEditorExtend/x-mathjax-vme-public-config.js"></script>
+
+<!-- http://visualmatheditor.equatheque.net/ -->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <mi>S</mi>
+        </mrow>
+        <mrow>
+          <mi>d</mi>
+          <mi>t</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>b</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>S</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>I</mi>
+    </mrow>
+  </mstyle>
+</math>
+
+<br><br>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <mi>I</mi>
+        </mrow>
+        <mrow>
+          <mi>d</mi>
+          <mi>t</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mi>b</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>S</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>I</mi>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>k</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>I</mi>
+    </mrow>
+  </mstyle>
+</math>
+
+<br><br>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <mi>R</mi>
+        </mrow>
+        <mrow>
+          <mi>d</mi>
+          <mi>t</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mi>k</mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>I</mi>
+    </mrow>
+  </mstyle>
+</math>
+
+<br><br>
+
+<p>To learn more about the SIR model, and to see an application to the Hong Kong flu, visit <a href="https://www.maa.org/press/periodicals/loci/joma/the-sir-model-for-spread-of-disease">this site</a>.</p>
+
+<p>This is the simpliest formulation of the SIR model. However, there can be variations, including for example, models that have delays for the infection process, time-varying events such as rolling out social distancing policy, or coupling of to multiple SIR models to explore the impact of travel restrictions between different communties.  An alternative model, the SEIR model can be found
+<a href="http://gabgoh.github.io/COVID/index.html">here</a>.</p>
+
+<strong>SEIR Model</strong>
+<p>The SEIR model is appropriate for when there is a considerable latency between when a person
+  is exposed to the virus, and when they become infectious.  Therefore, there is an <strong>E</strong>
+  in the model to represent those that are <strong>'Exposed'</strong> but not yet infectious.  The
+  SEIR model has an additional parameter 'alpha' that governs transition from exposed group to
+ infectious group, a rate of transition 'gamma' from infectious to recovered group,
+  as well as parameters which govern natural births and (non-COVID) deaths
+ within the population, which we assume to the same 'mu' value to keep the population
+constant over time. Note the leftmost mu in the dS/dt equation is for birth across all
+populations, i.e., mu * N, where N=1. The mathematical equations are as follows:</p>
+
+  <!-- http://visualmatheditor.equatheque.net/ -->
+  <!-- \frac{dS}{dt}=\mu -b\cdot S\cdot I-\mu \cdot S -->
+  <!-- \frac{dE}{dt}=b\cdot S\cdot I-\left( \mu+\alpha\right)E -->
+  <!-- \frac{dI}{dt}=\alpha\cdot E -\left( \mu+\gamma\right)I -->
+  <!-- R=1-S-E-I -->
+
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mstyle displaystyle="true">
+      <mrow class="MJX-TeXAtom-ORD">
+        <mfrac>
+          <mrow>
+            <mi>d</mi>
+            <mi>S</mi>
+          </mrow>
+          <mrow>
+            <mi>d</mi>
+            <mi>t</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mi>&#x03BC;<!-- μ --></mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <mi>b</mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>S</mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>I</mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <mi>&#x03BC;<!-- μ --></mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>S</mi>
+      </mrow>
+    </mstyle>
+  </math>
+
+<br>
+
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mstyle displaystyle="true">
+      <mrow class="MJX-TeXAtom-ORD">
+        <mfrac>
+          <mrow>
+            <mi>d</mi>
+            <mi>E</mi>
+          </mrow>
+          <mrow>
+            <mi>d</mi>
+            <mi>t</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mi>b</mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>S</mi>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>I</mi>
+        <mo>&#x2212;<!-- − --></mo>
+        <mrow>
+          <mo>(</mo>
+          <mi>&#x03BC;<!-- μ --></mi>
+          <mo>+</mo>
+          <mi>&#x03B1;<!-- α --></mi>
+          <mo>)</mo>
+        </mrow>
+        <mi>E</mi>
+      </mrow>
+    </mstyle>
+  </math>
+
+<br>
+
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <mi>I</mi>
+        </mrow>
+        <mrow>
+          <mi>d</mi>
+          <mi>t</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mi>&#x03B1;<!-- α --></mi>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mi>E</mi>
+      <mo>&#x2212;<!-- − --></mo>
+      <mrow>
+        <mo>(</mo>
+        <mi>&#x03BC;<!-- μ --></mi>
+        <mo>+</mo>
+        <mi>&#x03B3;<!-- γ --></mi>
+        <mo>)</mo>
+      </mrow>
+      <mi>I</mi>
+    </mrow>
+  </mstyle>
+</math>
+
+<br>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>R</mi>
+      <mo>=</mo>
+      <mn>1</mn>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>S</mi>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>E</mi>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>I</mi>
+    </mrow>
+  </mstyle>
+</math>
+
+<p>For more details see this <a href="https://sites.me.ucsb.edu/~moehlis/APC514/tutorials/tutorial_seasonal/node4.html#total">tutorial on the SEIR model</a>.</p>
