@@ -103,7 +103,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
         
         HTML("<br>Here's the data, if you're interested in it:"),
         #HTML("<div style='color: black'>"),
-        dataTableOutput("WA_casesData"),
+        dataTableOutput("WA_casesData")
         #HTML("</div>")
         ),
         
@@ -145,7 +145,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
         HTML("You can alter the sliders for the two parameters, but it looks like values of:<br>
              Effective Contact = 4<br>
              Infectious Period = 16<br>
-             results in the best fit using the RMSE goodness of fit measure shown above the figure.<br><br>"),
+             results in the best fit using the RMSE goodness of fit measure shown above the figure.<br><br>")
         
   #      HTML("Table of model fit stats:"),
   #      dataTableOutput("fit_RMSE_dt"),
@@ -206,7 +206,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
              actually be good for building up 'herd immunity' to potential future re-emergence of this virus. We will
              visit this issue later in the section on ('I hear people talk about R0 for the virus -- what's that about?' and
              'Why is a seroprevalence test even more important than a COVID-19 diagnostic test right now?').
-             <br><br>"),
+             <br><br>")
 
         ),
   
@@ -282,7 +282,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
                  the total number of illnesses above, may range from very mild cases
                   that wouldn't require any health care -- to more severe cases that would require health care. In the
                  next section, we'll discuss 'serious symptomatics', and why the number of deaths may be 1/10th of the 
-                 values found in this section.<br><br>"),
+                 values found in this section.<br><br>")
             
 
         ),
@@ -374,7 +374,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
                  to the economy, etc.  We also can observe that if we do nothing, we'll probably overwhelm our current
                  healthcare capacity. However, if we are aggressive in isolating cases, reducing the period that they
                  infect others by more than half we might be able to have health care capacity to deal with 
-                 the surge in severe cases.)<br><br>"),
+                 the surge in severe cases.)<br><br>")
         ),
   
         #Question 6###################################################
@@ -435,7 +435,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
            textOutput("number_cumul_deaths"),
            HTML("<br>"),            
            HTML("The simulations suggest that with more aggresive isolation of symptomatic cases, not only do we flatten the curve,
-           but we also reduce the cumulative numbers of sick people and deaths for the entire outbreak, which is certainly a good thing.<br><br>"),
+           but we also reduce the cumulative numbers of sick people and deaths for the entire outbreak, which is certainly a good thing.<br><br>")
 
         ),
   
@@ -491,7 +491,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
                       and deaths compared to the base case of 'doing nothing'. We also see that it delays
                       the outbreak peak, pushing it off in the future. With the more aggresive intervention,
                       we've pushed it almost off the 2-year figure.<br><br>And you know what they say about procrastination:<br>
-                      <em>'Never put off till tomorrow... unless it's an outbreak.' -- Edmund.</em><br><br>"),
+                      <em>'Never put off till tomorrow... unless it's an outbreak.' -- Edmund.</em><br><br>")
 
         ),
   
@@ -574,7 +574,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            longer interventions are more effective in reducing illnesses and deaths than shorter interventions.
            It cuts down, and flattens/extends the peak a bit.  Notice how there's a blip of resurging 
                 infection when we stop the intervention. We'll discuss this in the section 'When
-                can we stop interventions, and return to our normal lives'.<br><br>"),
+                can we stop interventions, and return to our normal lives'.<br><br>")
 
         ),
 
@@ -628,7 +628,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
             perturbations in 'b' and 'k' parameters.<br><br>
 
             You can read more about R <a href='https://www.healthknowledge.org.uk/public-health-textbook/research-methods/1a-epidemiology/epidemic-theory'>here</a>.
-                 <br><br>"),
+                 <br><br>")
 
         ),
 
@@ -667,7 +667,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            'essential services' such as public transit operators, and restaurant, grocery, pharmacy service workers, etc.).<br><br>
            
            Some might argue that it's not possible to test everyone. But, why can't it be done given the potential reductions to illnesses
-           and deaths?<br><br>"),
+           and deaths?<br><br>")
                  
         ),
   
@@ -722,7 +722,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            HTML("The model results demonstrate that if we stop an intervention before S(t) reaches below 0.25 (25% of the total population)
                 there is a blip of re-infections that occurs once the intervention is stopped. For the last scenario, in which we
                 allowed the intervention to run to 14 weeks, when S(t) ~ 0.25, we no longer get a blip of re-infection, and the infection
-                curve continues to go to zero. So it would be very useful to have a seroprevalence test.<br><br>"),            
+                curve continues to go to zero. So it would be very useful to have a seroprevalence test.<br><br>")            
         ),
  
         #Question 13 ###################################################
@@ -795,7 +795,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
             This illustrates how social distancing implemented for certain groups can have secondary beneficial impacts for other
             segments of the population. If we consider that group B individuals might be our high-risk seniors in the community,
             we can understand how social distancing strategies aimed at younger group A people not only benefit the young, but 
-                 seniors too.<br><br>"),
+                 seniors too.<br><br>")
 
         ),
 
@@ -834,7 +834,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
             HTML("The simulations show that limiting travel keeps the timing of the outbreaks separated between the two communities.
             However, allowing  travel between the communities, shifts the timing of the outbreaks so that they start to match
             each other.  Basically as soon as infection enters from community B from community A through say air travel, infection
-                 will 'take-off' in community B because its R<sub>0</sub> is like A's, suitable for transmission.<br><br>"),
+                 will 'take-off' in community B because its R<sub>0</sub> is like A's, suitable for transmission.<br><br>")
         ),
   
         #Question 16 ###################################################
@@ -879,7 +879,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
                  social distancing intervention, travel between a city B that isn't doing an intervention ends up hurting
                  city A. The mixing of the populations via travel not only pushes the infection peak earlier for A than 
                  it would otherwise have occurred if it limited travel, but it also increases the illnesses and deaths
-                 in city A.<br><br>"),
+                 in city A.<br><br>")
         ),
 
         #Question 17 ###################################################
@@ -987,7 +987,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
         from fitting other data sets from around the world, which range from 1.4 to 7.23 (the 14.8 is for the cruise
         ship).<br><br>
         Let's stop here, but more work may be needed to fit the SIR and SEIR models better to Washington state
-        data.<br><br>"),
+        data.<br><br>")
 
          ),
   
@@ -1034,7 +1034,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
          If you'd like to support my students who work on societal problems such as this, please consider a donation to my research group:
          <a href='https://sph.washington.edu/giving'>https://sph.washington.edu/giving</a>, mentioning 'Gift to Dr. Edmund Seto, Professor of 
          Environmental & Occupational Health Sciences'. We have many project such as this that could use your support.
-         <br><br>"),
+         <br><br>")
 
         )
 
