@@ -34,4 +34,8 @@ COPY Rprofile.site /usr/lib/R/etc/
 
 EXPOSE 3838
 
+ENV OPENBLAS_NUM_THREADS=2
+ENV GOTO_NUM_THREADS=2
+ENV OMP_NUM_THREADS=2
+
 CMD ["R", "-e shiny::runApp('/root/shinyCVModel')"]
