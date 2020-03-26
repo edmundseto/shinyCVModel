@@ -21,6 +21,7 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cloud.r-proje
 RUN R -e "install.packages(c('shinythemes'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('deSolve'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('reshape'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('glue'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('ggplot2'), repos='https://cloud.r-project.org/')"
 RUN R -e "install.packages(c('DT'), repos='https://cloud.r-project.org/')"
 
