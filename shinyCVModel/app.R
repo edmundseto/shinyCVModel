@@ -35,8 +35,8 @@ default_deaths <- 0.01
 # Define UI for application that draws a histogram
 ui <- fluidPage(theme = shinytheme("spacelab"),
                 
-
-    img(src="DEOHS-Logo-Line-White-Web.jpg", height=50, style="margin-top:10px"),
+    img(src="DEOHS-Logo-Line-Purple-Print-Transparency.png", height=25, style="margin-top:10px"),
+    HTML("<hr>"),
     #TitlePanel#############################################################
     titlePanel("Washington State Coronavirus Epidemiologic Outbreak Modeling"),
     ########################################################################
@@ -86,7 +86,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
         HTML("<br>"),
         img(src="inslee_3_10.png", height=144, style="float:left; margin:10px"),
         HTML("<br><br><em>If there are a 1000 people infected today, in 7 or 8 weeks there could be 64,000 people infected in the state of Washington if we don’t somehow
-             slow down this epidemic. And the next week it’d be 120,000. And the next week it’d be a quarter million. -- Governer Jay Inslee, 3/10/20.</em><br style='clear:both'><br>"),
+             slow down this epidemic. And the next week it’d be 120,000. And the next week it’d be a quarter million. -- Governor Jay Inslee, 3/10/20.</em><br style='clear:both'><br>"),
         
         HTML("Historical data on cases and deaths were not easy to find. The <a href='https://www.doh.wa.gov/Emergencies/Coronavirus'>
         WA State Department of Health's
@@ -123,7 +123,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
         symptoms, and whether there are hundreds or thousands of infected and infectious cases in the 
         community that were not identified and confirmed with testing.<br><br>
         Because of these uncertainties, we'll just be looking for a crude fit (to the proportion of cases
-        reported up to Mar 20 for each of the preceeding days), in which the rise
+        reported up to Mar 20 for each of the preceding days), in which the rise
         in the number of infections in the model matches the shape of rise in proportion of cases.
              Note that the large majority (>80%) of cases and deaths are located in King, Snohomish, and Pierce
              Counties, which account for about 4 million persons of the state's 7.8 million population.<br><br>"),
@@ -203,7 +203,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
              community is infected at the moment in time!<br><br>
              But keep in mind not all of these infections will result in symptoms, and many may not be discovered. 
              Moreover, this might be the case only if 'we do nothing' to stop virus spread.
-             And some might argue that having the a lot of asymptomatic individuals, and having the bulk of the community 
+             And some might argue that having a lot of asymptomatic individuals, and having the bulk of the community 
              move to the 'R' (Recovered) state may 
              actually be good for building up 'herd immunity' to potential future re-emergence of this virus. We will
              visit this issue later in the section on ('I hear people talk about R0 for the virus -- what's that about?' and
@@ -337,7 +337,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
             We'll explore this below, by introducing an intervention that reduces the
             average period that people are infected/infectious. Think of this as
             what happens when sick people are isolated, like for example, when we hear 'stay at home
-            if you're sick'.  For simplicity, we'll asssume
+            if you're sick'.  For simplicity, we'll assume
             this intervention starts on day 1 and continues throughout the outbreak.<br><br>
             
             To implement this intervention via the model, below, move the slider for the 'Infectious Period' 
@@ -394,7 +394,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
              of infected and sick people, which can be important for not overwhelming healthcare resources.  It has the drawback of delaying and
              extending the peak of the outbreak though.<br><br>
              
-             To recap the previous step, the static plot below compares the number of symptomic people for the
+             To recap the previous step, the static plot below compares the number of symptomatic people for the
              baseline 'do nothing' case (blue curve) vs an intervention that isolates cases by more than half
              the infectious period ('k' = 1/6)(red curve):<br><br>"),
              
@@ -418,7 +418,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
            healthcare system, does flattening the curve actually reduce the total number of illnesses and deaths over the course of the 
            entire outbreak?  Let's re-run the model now, looking at total cumulative numbers of people who develop symptoms, and total numbers
            of deaths.  We'll run the model for three cases: a base scenario with 'no intervention', a scenario in which isolation of cases 
-           results in 2/3rds the original infectious period, and a more aggresive scneario in which isolation of cases results in 1/2rd of the 
+           results in 2/3rds the original infectious period, and a more aggressive scenario in which isolation of cases results in 1/2rd of the 
            original infectious period.<br><br>"),
            
            radioButtons(inputId="select_cumul_sick_death_scenario", label = "Select a scenario:", choices = 
@@ -428,7 +428,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
            
            HTML("For each, we assume a community population of N=4 million people, 5% serious symptomatic percentage, and 1% death rate of those who are severely sick.<br><br>"),
            
-           HTML("Blow is the model of the cumulative numbers of symptomatic persons over time."),            
+           HTML("Below is the model of the cumulative numbers of symptomatic persons over time."),            
            plotOutput("SIRplot_cumul_sick_death_scenario"),
            HTML("<br><br>"),            
            
@@ -436,7 +436,7 @@ ui <- fluidPage(theme = shinytheme("spacelab"),
            textOutput("number_cumul_sick"),
            textOutput("number_cumul_deaths"),
            HTML("<br>"),            
-           HTML("The simulations suggest that with more aggresive isolation of symptomatic cases, not only do we flatten the curve,
+           HTML("The simulations suggest that with more aggressive isolation of symptomatic cases, not only do we flatten the curve,
            but we also reduce the cumulative numbers of sick people and deaths for the entire outbreak, which is certainly a good thing.<br><br>")
 
         ),
@@ -452,13 +452,13 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
 
                  HTML("<strong>Social Distancing</strong><br>
                  Isolating people with symptoms is a good first step to prevent the spread of infection. 
-                 However, there are other more aggresive intervention steps based on the concept of 'social distancing'.
+                 However, there are other more aggressive intervention steps based on the concept of 'social distancing'.
                  One next step might be to identify close-contacts of those with symptoms and quarantine these individuals because they are at risk of
                  having been infected and eventually developing symptoms or becoming asymptomatic spreaders of infection in the next few days. We wouldn't
                  want these obviously higher-risk individuals to further the spread infection -- so we need to keep them at a distance from the rest of society.
-                 More aggresive steps might be aimed at reducing contacts <em>broadly</em> within the community. This is where closing down of schools, 
+                 More aggressive steps might be aimed at reducing contacts <em>broadly</em> within the community. This is where closing down of schools, 
                  businesses, conventions, etc. come into play. And, eventually orders for the general population to shelter-in-place would be one of the most
-                 aggresive interventions for social distancing.<br><br>
+                 aggressive interventions for social distancing.<br><br>
                  
                  <strong>Does social distancing work?</strong><br>
                  Yes, it does, by reducing the Effective Contact parameter 'b'.  Based on one of our previous modeling steps we fit WA case data to a 'b' of
@@ -491,7 +491,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
                  HTML("<br>"),            
                  HTML("The simulations illustrate how social distancing reduces the cumulative numbers of severely sick persons
                       and deaths compared to the base case of 'doing nothing'. We also see that it delays
-                      the outbreak peak, pushing it off in the future. With the more aggresive intervention,
+                      the outbreak peak, pushing it off in the future. With the more aggressive intervention,
                       we've pushed it almost off the 2-year figure.<br><br>And you know what they say about procrastination:<br>
                       <em>'Never put off till tomorrow... unless it's an outbreak.' -- Edmund.</em><br><br>")
 
@@ -529,7 +529,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
                               "Intervention - week 16 (Apr 15)" = "week16",
                               "Intervention - week 18 (Apr 29)" = "week18")),
            
-           HTML("For each, we assume a community population with N=4 million people, k=1/16, 5% serious symptomatic percentage, and 1% death rate of those who are serverely sick.<br><br>"),
+           HTML("For each, we assume a community population with N=4 million people, k=1/16, 5% serious symptomatic percentage, and 1% death rate of those who are severely sick.<br><br>"),
            
            HTML("Below is the time-series of the epidemiological model SIR groups."),            
            plotOutput("SIRplot_timing_SIR"),
@@ -541,7 +541,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            HTML("<br>"),            
            
            HTML("<strong>But, hardly any changes happen!</strong><br>
-                The simulation show that the timing matters slighly, but the effect is very minimal because
+                The simulation show that the timing matters slightly, but the effect is very minimal because
                 2-weeks is perhaps too short of an intervention period. Let's now explore the effect of 
                 altering the intervention duration.<br><br>"),            
 
@@ -621,7 +621,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
             average number of new infections per existing infected person when there are both susceptible and non-susceptible people in the 
             community -- like right after the disease starts to spread in the community. It is quantified by:<br><br>
             R = R<sub>0</sub> S(t)<br><br>
-            where S(t) is the proportion of the popoulation that's still susceptible at time t. If R<1 then the disease can no longer
+            where S(t) is the proportion of the population that's still susceptible at time t. If R<1 then the disease can no longer
             persist in the community, and the outbreak curve will fall off. Specifically, for our model in WA State, if we believe our
             estimate of R<sub>0</sub> = 4, then the threshold for COVID-19 persistence is when S(t) is 0.25 -- meaning the susceptible
             population needs to drop to below 25% of the total population of the community before new infections will decrease.<br><br>
@@ -659,7 +659,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            As of Mar 20, 2020 there is still no testing available for the general public. This is a major public health failure because
            we have no way of identifying asymptomatic individuals (people who are infected and infectious, yet do not display any symptoms).
            These individuals may still be spreading infection in the community, especially since there is no mandated and enforced 
-           shelter-in-place in the state. It remains unclear if people are complying with recommendations to 'hunker down' or are capabile
+           shelter-in-place in the state. It remains unclear if people are complying with recommendations to 'hunker down' or are capable
            of even doing so.<br><br>
            
            The lack of testing in high-risk populations is especially worrisome. I'm not only talking about testing those at 
@@ -693,7 +693,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            'R' to be lower than 1 so that infections will decay with time. To recap, the relationship was:
            
            R = R<sub>0</sub> S(t)<br><br>
-           where S(t) is the proportion of the popoulation that's still susceptible at time t. If R<1 then the disease can no longer
+           where S(t) is the proportion of the population that's still susceptible at time t. If R<1 then the disease can no longer
             persist in the community, and the outbreak curve will fall off (it might take awhile for it to fall to zero though).
             And, we found that with an estimated R<sub>0</sub> = 4, 
             S(t) needed to be below 0.25 -- in other words, the susceptible population needs to drop to below 25% of the 
@@ -713,7 +713,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
                 specified duration):<br><br>"),
             
            radioButtons(inputId="select_seroprevalence", label = "Select a scenario:", choices = 
-                c("Intervention lasting 3 week (too short)" = "short",
+                c("Intervention lasting 3 weeks (too short)" = "short",
                   "Intervention lasting 6 weeks (too short)" = "longer",
                   "Intervention lasting 14 weeks (long enough)" = "long enough")),
             
@@ -855,7 +855,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
            a group of different cities as our metapopulation. Let's make it simple and say there are just two cities in our 
            metapopulation, one is A and the other is B.<br><br>
            
-           To make this provacative, let's say that one city A is doing its best to implement social distancing as an 
+           To make this provocative, let's say that one city A is doing its best to implement social distancing as an 
             intervention, while the other city B isn't doing anything to limit the spread of infection. We will consider a
                  baseline scenario, in which we do not allow for any travel between the two cities, so 
                  their outbreaks should be decoupled and progress as they would on their own.  However, we'll allow
@@ -1023,7 +1023,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
          
          Keep in mind that all models have limitations. Therefore, the answers provided here should not
          be considered accurate or precise given the limitations, assumptions, and variability and uncertainties
-         in parameter estimates. Therefore, you should not rely soley on a single model and set of results for decision-making.
+         in parameter estimates. Therefore, you should not rely solely on a single model and set of results for decision-making.
          There are alternative epidemiological models that may be considered. For example, this is site with an
   <a href='http://gabgoh.github.io/COVID/index.html'>SEIR model</a>.<br><br>
 
@@ -1035,7 +1035,7 @@ to meet moments, and this is a moment we need to make tough decisions. -- Govern
          
          If you'd like to support my students who work on societal problems such as this, please consider a donation to my research group:
          <a href='https://sph.washington.edu/giving'>https://sph.washington.edu/giving</a>, mentioning 'Gift to Dr. Edmund Seto, Professor of 
-         Environmental & Occupational Health Sciences'. We have many project such as this that could use your support.
+         Environmental & Occupational Health Sciences'. We have many projects such as this that could use your support.
          <br><br>")
 
         )
